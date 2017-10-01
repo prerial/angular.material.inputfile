@@ -1,0 +1,94 @@
+<div layout="column" ng-cloak class="md-inline-form">
+
+    <md-content layout-padding ng-show="currentStep === 1">
+        <div>
+            <form name="userForm">
+                <h3>Select Source</h3>
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Input Source</label>
+                        <md-select placeholder="Choose file type" md-on-open="aaaa()" ng-required="true" ng-model="inputType">
+                            <md-option ng-repeat="type in sourceTypes" value="{{type}}">
+                                {{type}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Target Source</label>
+                        <md-select placeholder="Choose file type" md-on-open="aaaa()" ng-required="true" ng-model="targetType">
+                            <md-option ng-repeat="type in sourceTypes" value="{{type}}">
+                                {{type}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+
+                </div>
+
+                <div layout-gt-xs="row">
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <input id="file1" type="file" nv-file-select="" uploader="uploader">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-xs>
+                        <input id="file2" type="file" nv-file-select="" uploader="uploader">
+                    </md-input-container>
+                </div>
+
+                <div layout-gt-xs="row">
+                    <md-button id="btn-step-1" ng-click="showSelectionPage()" ng-disabled="checkLoadedFiles()" class="md-primary md-raised md-hue-1">Next</md-button>
+                </div>
+
+            </form>
+        </div>
+    </md-content>
+
+</div>
+
+<style>
+    .capitalize{
+        font-size:20px;
+color:red;
+    }
+
+</style>
+<div id="page-wrapper">
+    <md-content layout-padding ng-show="currentStep === 2">
+        <h3>Select Fields</h3>
+        <div class="row">
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Select Source Key</label>
+                    <md-select placeholder="Choose file key" md-on-open="bbbb()" ng-required="true" ng-model="inputKey">
+                        <md-option ng-repeat="opt in sourceArray" value="{{opt}}">{{opt}}</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Select Target Key</label>
+                    <md-select placeholder="Choose file key" md-on-open="bbbb()" ng-required="true" ng-model="targetKey">
+                        <md-option ng-repeat="opt in targetArray" value="{{opt}}">{{opt}}</md-option>
+                    </md-select>
+                </md-input-container>
+
+            </div>
+
+            <div layout-gt-xs="row">
+                <md-button ng-click="addKeys()" ng-disabled="checkLoadedKeys()" class="md-primary md-raised md-hue-1">Add Fields</md-button>
+            </div>
+
+        </div>
+
+        <h3>Map Result</h3>
+        <div id="result" class="normal">{{map}}</div>
+        <div layout-gt-xs="row">
+            <md-button ng-click="reconcile()" ng-disabled="checkReconcile()" class="md-primary md-raised md-hue-1">Reconcile</md-button>
+        </div>
+        <div layout-gt-xs="row">
+            <md-button ng-click="reset()" class="md-primary md-raised md-hue-1">Back</md-button>
+        </div>
+
+    </md-content>
+
+    </div>
+</div>
