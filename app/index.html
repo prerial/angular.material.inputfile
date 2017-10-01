@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="app.uds">
+<head>
+
+  <title>Angular Material title</title>
+
+  <!-- Styles -->
+  <!--
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel='stylesheet' />
+  -->
+  <link href="bower_components/angular-material/angular-material.css" rel='stylesheet' />
+  <link href="css/docs.css" rel='stylesheet' />
+  <link href="css/main.css" rel='stylesheet' />
+  <link href="css/custom.css" rel='stylesheet' />
+  <!-- Libraries -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+  <script src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+
+  <script src="main.js"></script>
+
+</head>
+
+<body ng-controller="AppController" class="docs-body layout-row" layout="row" ng-cloak aria-label="Angular Material Docs">
+
+<div layout="column" tabindex="-1" role="main" flex="" class="layout-column flex" style="heignh:2000px">
+<div layout="column" tabIndex="-1" role="main" flex>
+
+
+  <md-content md-scroll-y layout="column" flex style="height:2000px">
+    <div ng-view layout-padding flex="noshrink" class="docs-ng-view"></div>
+    <md-button class="md-fab md-fab-bottom-right"
+               docs-scroll-class="scrolling"
+               ng-click="scrollTop()"
+               aria-label="Back to Top">
+      <md-tooltip md-direction="top">Back to Top</md-tooltip>
+      <md-icon md-svg-src="/img/icons/ic_arrow_up_24px.svg"></md-icon>
+    </md-button>
+
+    <md-button class="md-fab md-fab-bottom-right docs-scroll-fab"
+               docs-scroll-class="scrolling"
+               ng-click="scrollTop()"
+               aria-label="Back to Top">
+      <md-tooltip md-direction="top">Back to Top</md-tooltip>
+      <md-icon md-svg-src="/img/icons/ic_arrow_up_24px.svg"></md-icon>
+    </md-button>
+
+  </md-content>
+
+</div>
+
+</div>
+
+</body>
+</html>
